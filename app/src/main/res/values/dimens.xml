@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="output_text_size">27sp</dimen>
+    <dimen name="predict_text_size">25sp</dimen>
+    <dimen name="load_button_width">0dp</dimen>
+    <dimen name="load_button_margin">25dp</dimen>
+    <dimen name="bird_iv_margin_top">50dp</dimen>
+    <dimen name="bird_iv_width">300dp</dimen>
+    <dimen name="bird_iv_height">400dp</dimen>
+</resources>

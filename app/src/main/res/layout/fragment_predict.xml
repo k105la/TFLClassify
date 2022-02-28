@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/bird_iv"
+        android:layout_width="@dimen/bird_iv_width"
+        android:layout_height="@dimen/bird_iv_height"
+        android:layout_marginTop="@dimen/bird_iv_margin_top"
+        android:contentDescription="@string/bird_iv_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/output_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/output"
+        android:textColor="@color/black"
+        android:textSize="@dimen/output_text_size"
+        app:layout_constraintBottom_toTopOf="@id/load_button"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bird_iv"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/prediction_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#00FF00"
+        android:textSize="@dimen/predict_text_size"
+        app:layout_constraintBottom_toTopOf="@id/load_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toEndOf="@id/output_text"
+        app:layout_constraintTop_toBottomOf="@id/bird_iv"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <Button
+        android:id="@+id/load_button"
+        android:layout_width="@dimen/load_button_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/load_button_margin"
+        android:text="@string/load_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bird_iv"
+        app:layout_constraintVertical_bias="0.9" />
+</androidx.constraintlayout.widget.ConstraintLayout>
