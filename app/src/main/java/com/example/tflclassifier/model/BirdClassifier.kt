@@ -11,7 +11,6 @@ import com.example.tflclassifier.viewmodel.RecognitionViewModel
 import org.tensorflow.lite.support.image.TensorImage
 
 class BirdClassifier {
-
     fun predict(bitmap: Bitmap, predictBinding: FragmentPredictBinding, context: Context, recognitionViewModel: RecognitionViewModel, viewLifecycleOwner: LifecycleOwner ) {
         // Declaring tensor flow lite model variable
         val birdsModel = ClassifierBirds.newInstance(context)
