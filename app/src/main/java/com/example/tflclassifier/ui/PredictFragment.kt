@@ -13,7 +13,9 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import com.example.tflclassifier.databinding.FragmentPredictBinding
 import androidx.activity.result.ActivityResult
+import androidx.fragment.app.viewModels
 import com.example.tflclassifier.model.BirdClassifier
+import com.example.tflclassifier.viewmodel.RecognitionViewModel
 
 const val GALLERY_REQUEST_CODE = 123
 
@@ -21,6 +23,7 @@ class PredictFragment : Fragment() {
     private var _predictBinding: FragmentPredictBinding? = null
     private val predictBinding get() = _predictBinding
     private val birdClassifier = BirdClassifier()
+    private val recognitionViewModel: RecognitionViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -54,13 +57,19 @@ class PredictFragment : Fragment() {
         when (requestCode) {
             GALLERY_REQUEST_CODE -> {
                 if (result.resultCode == Activity.RESULT_OK) {
+
                     result.data?.data?.let { uri ->
                         Log.i("TAG", "onResultReceived: $uri")
                         val bitmap =
                             BitmapFactory.decodeStream(activity?.contentResolver?.openInputStream(
                                 uri))
+
                         predictBinding?.birdIv?.setImageBitmap(bitmap)
-                        birdClassifier.predict(bitmap, predictBinding!!, this.requireContext())
+                        birdClassifier.predict(bitmap,
+                            predictBinding!!,
+                            this.requireContext(),
+                            recognitionViewModel,
+                            viewLifecycleOwner)
                     }
                 } else {
                     Log.e("TAG", "onActivityResult: error in selecting image")
@@ -68,5 +77,5 @@ class PredictFragment : Fragment() {
             }
         }
     }
-
 }
+
