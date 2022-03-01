@@ -41,7 +41,7 @@
         app:layout_constraintStart_toEndOf="@id/output_text"
         app:layout_constraintTop_toBottomOf="@id/bird_iv"
 
-        android:paddingStart="10dp"
+        android:paddingStart="@dimen/predict_text_start_padding"
         app:layout_constraintVertical_bias="0.5"
         tools:ignore="RtlSymmetry" />
 

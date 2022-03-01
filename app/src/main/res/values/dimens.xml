@@ -7,4 +7,5 @@
     <dimen name="bird_iv_margin_top">50dp</dimen>
     <dimen name="bird_iv_width">300dp</dimen>
     <dimen name="bird_iv_height">400dp</dimen>
+    <dimen name="predict_text_start_padding">10dp</dimen>
 </resources>
